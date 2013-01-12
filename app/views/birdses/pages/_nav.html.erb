@@ -2,11 +2,13 @@
 
 <div id='birdses_pages_nav'>
   <ul>
+    <% unless index? %>
+      <li>
+        <%= link_to 'Wiki Home', root_url %>
+      </li>
+    <% end %>
     <li>
-      <%= link_to_unless_current 'Home', root_url %>
-    </li>
-    <li>
-      <%= link_to_unless_current 'New', new_page_path %>
+      <%= link_to_unless_current 'New Page', new_page_path %>
     </li>
     <% unless index? || new? || edit? %>
       <li>
