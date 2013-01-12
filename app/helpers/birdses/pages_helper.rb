@@ -1,7 +1,7 @@
 module Birdses
   module PagesHelper
     def index?
-      current?(:index)
+      current?(:index) || current_page?(root_url)
     end
 
     def new?
