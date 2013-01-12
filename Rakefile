@@ -26,4 +26,12 @@ RSpec::Core::RakeTask.new(:spec)
 # RSpec as default
 task :default => :spec
 
+desc 'create git repo for the wiki'
+task :init_wiki do
+  sh 'mkdir -p spec/dummy/wiki/'
+  Dir.chdir('spec/dummy/wiki') do
+    sh 'git init && echo "Hi" > home.md && git add . && git commit -m "init"'
+  end
+end
+
 Bundler::GemHelper.install_tasks

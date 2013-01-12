@@ -1,0 +1,26 @@
+<h2><%= @page.name %></h2>
+
+<%= form_for :page, url: { action: create_or_update? },
+                    method: post_or_put?, html: { id: 'editor_form' } do |f| %>
+  <% if new? %>
+    <%= f.text_field :name %>
+  <% end %>
+  <%= f.text_area :raw_data %>
+  <%= f.submit %>
+  <div id="editor"></div>
+<% end %>
+
+<script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+  var textarea = $("[id$=page_raw_data]");
+  textarea.hide();
+  var editor = ace.edit("editor");
+  editor.getSession().setValue(textarea.val());
+  editor.setTheme("ace/theme/tomorrow");
+  editor.getSession().setMode("ace/mode/markdown");
+  editor.getSession().setTabSize(2);
+  editor.resize();
+  $("#editor_form").submit(function(){
+    textarea.val(editor.getSession().getValue());
+  });
+</script>

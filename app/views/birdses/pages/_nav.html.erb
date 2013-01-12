@@ -1,0 +1,20 @@
+<div id='birdses_pages_nav'>
+  <ul>
+    <li>
+      <%= link_to_unless_current 'Home', pages_path %>
+    </li>
+    <li>
+      <%= link_to_unless_current 'New', new_page_path %>
+    </li>
+    <% unless index? || new? %>
+      <li>
+        <%= link_to 'Edit', controller: 'pages', action: :edit,
+                            id: @page.name %>
+      </li>
+      <li>
+        <%= link_to 'Destroy', "#{pages_path}/#{@page.name}", method: :delete,
+                                confirm: "Are you sure?" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
