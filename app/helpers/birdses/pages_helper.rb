@@ -31,5 +31,11 @@ module Birdses
     def current?(page)
       current_page?(controller: 'pages', action: page)
     end
+
+    def title(page)
+      doc = Nokogiri::HTML::fragment(page.formatted_data, 'UTF-8')
+      h1 = doc.css("h1:first-child")
+      raw("<h1>#{page.name}</h1>") if h1.empty?
+    end
   end
 end
