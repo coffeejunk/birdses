@@ -4,3 +4,15 @@
   width: 80%;
   height: 80%;
 }
+
+#birdses_pages_nav ul {
+  margin-left: 0;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  list-style: none;
+  float: right;
+}
+
+#birdses_pages_nav li {
+  display: inline;
+}
