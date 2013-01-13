@@ -13,8 +13,8 @@ Gem::Specification.new do |s|
   s.summary     = "gollum wiki as a mountable rails engine"
   s.description = "gollum wiki as a mountable rails engine"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 3.2.11"
   s.add_dependency "gollum", "~> 2.4.11"
