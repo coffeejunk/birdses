@@ -42,11 +42,15 @@ module Birdses
     private
 
     def get_user
-      # TODO: check for current_user
-      @user = {
-        'name' => 'Anonymous',
-        'email' => 'anon@example.com'
-      }
+      name  = 'Anonymous'
+      email = 'anon@example.com'
+      if defined?(current_user)
+        # this rescue is necessary because .try?(:method) does not work on
+        # `current_user`
+        name  = current_user.fullname rescue 'Anonymous'
+        email = current_user.email    rescue 'anon@example.com'
+      end
+      @user = { 'name' => name, 'email' => email }
     end
   end
 end
