@@ -6,8 +6,7 @@ Add Birdses to your rails application in three easy steps:
 
 1. add `gem 'birdses'` to your Gemfile and run `bundle install`
 2. add `mount Birdses::Engine => "/wiki"` to your `config/routes.rb`
-3. init a [git](http://git-scm.com/) repository under `wiki/`  
-   (you can do this by running `rake init_wiki`)
+3. init a [git](http://git-scm.com/) repository under `wiki/` (`mkdir -p wiki && git init wiki`)
 
 ## Why?
 
