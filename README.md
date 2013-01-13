@@ -15,7 +15,7 @@ But why, why would you want to do this? After all you can already [mount gollum'
 
 ## Example
 
-You can see an example [here](https://github.com/coffeejunk/birdses-example). It also runs on [heroku](birdses-demo.herokuapp.com), just give it a couple of seconds to spin up the dyno. :)
+You can see an example [here](https://github.com/coffeejunk/birdses-example). It also runs on [heroku](http://birdses-demo.herokuapp.com), just give it a couple of seconds to spin up the dyno. :)
 
 ## Caveats
 
