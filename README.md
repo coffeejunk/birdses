@@ -13,6 +13,10 @@ Add Birdses to your rails application in three easy steps:
 
 But why, why would you want to do this? After all you can already [mount gollum's sinatra application](https://github.com/github/gollum#rack). Well that works just fine, however gollum's frontend and your rails application wont look like they belong together. Gollum's frontend can't use your ApplicationLayout, which means you would lose that great menu bar twitter bootstrap gives you and that's just sad!
 
+## Example
+
+You can see an example [here](https://github.com/coffeejunk/birdses-example). It also runs on [heroku](birdses-demo.herokuapp.com), just give it a couple of seconds to spin up the dyno. :)
+
 ## Caveats
 
 ### `current_user`
