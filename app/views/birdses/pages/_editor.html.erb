@@ -7,7 +7,15 @@
   <% end %>
   <%= f.text_area :raw_data %>
   <%= f.submit %>
+  <%= f.submit "Preview", :name => 'preview_button' %>
   <div id="editor"></div>
+  <div id="preview"></div>
+<% end %>
+
+<%= form_tag "#{pages_path}/doesntmatter/preview", id: 'preview_form',
+                                                   remote: true do -%>
+  <%= hidden_field_tag 'name', 'title', { id: 'preview_name' } %>
+  <%= hidden_field_tag 'content', 'content', { id: 'preview_content' } %>
 <% end %>
 
 <%= javascript_include_tag "birdses/application" %>

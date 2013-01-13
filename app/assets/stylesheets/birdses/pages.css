@@ -5,6 +5,11 @@
   height: 80%;
 }
 
+#preview {
+  margin-top: 25px;
+  display: none;
+}
+
 #birdses_pages_nav ul {
   margin-left: 0;
   margin-right: 50px;

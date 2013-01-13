@@ -39,6 +39,11 @@ module Birdses
       redirect_to pages_path
     end
 
+    def preview
+      preview = Page.preview(params[:name], params[:content])
+      @content = preview.formatted_data
+    end
+
     private
 
     def get_user

@@ -33,6 +33,10 @@ module Birdses
       wiki.page(name)
     end
 
+    def preview(page_name, content)
+      wiki.preview_page(page_name, content, WIKI_FORMAT)
+    end
+
     private
 
     def wiki
