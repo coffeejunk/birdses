@@ -13,13 +13,13 @@ Add Birdses to your rails application in three easy steps:
 
 ### `current_user`
 
-If you're using an authentication system that provides a `current_user` method (like [devise](https://github.com/plataformatec/devise)), birdses will try to access `.fullname` and `.email` (on current_user). It will use these for the commit messages.
+If you're using an authentication system that provides a `current_user` method (like [devise](https://github.com/plataformatec/devise)), birdses will try to access `.fullname` and `.email` (on `current_user`). It will use these for the commit messages.
 
 ### `_url`/`_path`
 
-If you use any magic url mappers (anything that ends with `_path` or `_url`) in the application layout you will have to use the `main_app` [helper](http://edgeguides.rubyonrails.org/engines.html#using-a-class-provided-by-the-application).
+If you use any magic url mappers (any method that ends with `_path` or `_url`) in the application layout you will have to use the `main_app` [helper](http://edgeguides.rubyonrails.org/engines.html#using-a-class-provided-by-the-application).
 
-For example, I use [Twitter Bootstrap](http://twitter.github.com/bootstrap/) and have a 'Sign Out' link in my navigation bar. For it to work properly with birdses I have to prepend the helper method. 
+For example, I use [Twitter Bootstrap](http://twitter.github.com/bootstrap/) and have a 'Sign Out' link in my navigation bar. For it to work properly with birdses I have to prepend the helper method.
 
 without birdes:
 ```haml
