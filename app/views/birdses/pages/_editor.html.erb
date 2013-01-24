@@ -8,8 +8,9 @@
   <div id="birdses_editor">
     <%= f.gollum_editor :raw_data %>
   </div>
-  <%= f.submit %>
-  <%= f.submit "Preview", :name => 'preview_button' %>
+  <%= f.submit "Save Page", :id => 'birdses_submit_btn', :class => 'btn' %>
+  <%= f.submit "Preview", :name => 'preview_button',
+    :id => 'birdses_preview_btn', :class => 'btn' %>
   <div id="birdses_preview"></div>
 <% end %>
 
