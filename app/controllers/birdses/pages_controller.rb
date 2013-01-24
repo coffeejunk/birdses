@@ -40,8 +40,12 @@ module Birdses
     end
 
     def preview
-      preview = Page.preview(params[:name], params[:content])
-      @content = preview.formatted_data
+      md = Page.preview(params[:name], params[:md_content])
+      html = md.formatted_data
+
+      respond_to do |format|
+        format.json { render :json => { :html => html } }
+      end
     end
 
     private

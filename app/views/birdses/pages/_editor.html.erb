@@ -5,18 +5,15 @@
   <% if new? %>
     <%= f.text_field :name %>
   <% end %>
-  <%= f.text_area :raw_data %>
+  <div id="editor">
+    <%= f.gollum_editor :raw_data %>
+  </div>
   <%= f.submit %>
   <%= f.submit "Preview", :name => 'preview_button' %>
-  <div id="editor"></div>
   <div id="preview"></div>
 <% end %>
 
 <%= form_tag "#{pages_path}/doesntmatter/preview", id: 'preview_form',
-                                                   remote: true do -%>
-  <%= hidden_field_tag 'name', 'title', { id: 'preview_name' } %>
-  <%= hidden_field_tag 'content', 'content', { id: 'preview_content' } %>
-<% end %>
+                                                   remote: true -%>
 
 <%= javascript_include_tag "birdses/application" %>
-<%= javascript_include_tag "http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" %>

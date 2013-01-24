@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.11"
   s.add_dependency "gollum", "~> 2.4.11"
+  s.add_dependency "gollum_editor", "~> 0.4"
 
   s.add_development_dependency 'rspec-rails'
 end
