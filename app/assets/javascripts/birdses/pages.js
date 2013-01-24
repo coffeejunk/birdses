@@ -1,3 +1,5 @@
+//= require gollum_editor/gollum
+
 $(document).ready(function() {
   textarea = $("textarea#gollum-editor-body")
   if ($(textarea).length) {
