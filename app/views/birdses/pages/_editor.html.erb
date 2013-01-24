@@ -1,19 +1,19 @@
 <h2><%= @page.name %></h2>
 
-<%= form_for :page, url: { action: create_or_update? },
-                    method: post_or_put?, html: { id: 'editor_form' } do |f| %>
+<%= form_for :page, url: { action: create_or_update? }, method: post_or_put?,
+  html: { id: 'birdses_editor_form' } do |f| %>
   <% if new? %>
     <%= f.text_field :name %>
   <% end %>
-  <div id="editor">
+  <div id="birdses_editor">
     <%= f.gollum_editor :raw_data %>
   </div>
   <%= f.submit %>
   <%= f.submit "Preview", :name => 'preview_button' %>
-  <div id="preview"></div>
+  <div id="birdses_preview"></div>
 <% end %>
 
-<%= form_tag "#{pages_path}/doesntmatter/preview", id: 'preview_form',
+<%= form_tag "#{pages_path}/doesntmatter/preview", id: 'birdses_preview_form',
                                                    remote: true -%>
 
 <%= javascript_include_tag "birdses/application" %>

@@ -2,14 +2,14 @@
  *= require gollum_editor/gollum
  */
 
-#editor {
+#birdses_editor {
   position: absolute;
   margin-top: 25px;
   width: 80%;
   height: 80%;
 }
 
-#preview {
+#birdses_preview {
   margin-top: 25px;
   display: none;
 }
