@@ -21,10 +21,12 @@ module Birdses
 
     def show
       @page = Page.find_by_name(params[:id])
+      render_404 unless @page
     end
 
     def edit
       @page = Page.find_by_name(params[:id])
+      render_404 unless @page
     end
 
     def update
@@ -60,6 +62,14 @@ module Birdses
         email = current_user.email    rescue 'anon@example.com'
       end
       @user = { 'name' => name, 'email' => email }
+    end
+
+    def render_404
+      respond_to do |type|
+        type.html { render :template => "birdses/pages/404",
+                    :layout => 'application', :status => 404 }
+        type.all  { render :nothing => true, :status => 404 }
+      end
     end
   end
 end
