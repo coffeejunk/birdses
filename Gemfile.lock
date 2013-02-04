@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    birdses (0.0.1)
+    birdses (0.0.2)
       gollum (~> 2.4.11)
       gollum_editor (~> 0.4)
       rails (~> 3.2.11)
