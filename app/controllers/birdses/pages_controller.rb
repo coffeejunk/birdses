@@ -14,7 +14,7 @@ module Birdses
     end
 
     def create
-      name    = params[:page][:name]
+      name    = params[:page][:name].gsub(/\//, '-')
       content = params[:page][:raw_data]
       @page = Page.create(name, content, @user)
       redirect_to "#{pages_path}/#{name}"
