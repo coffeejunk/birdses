@@ -3,6 +3,7 @@ require_dependency "birdses/application_controller"
 module Birdses
   class PagesController < ApplicationController
     before_filter :get_user
+    before_filter :set_page, only: [:show, :edit]
 
     def index
       @pages = Page.all
@@ -16,24 +17,14 @@ module Birdses
       name    = params[:page][:name]
       content = params[:page][:raw_data]
       @page = Page.create(name, content, @user)
-      redirect_to "#{pages_path}/#{name.parameterize}"
-    end
-
-    def show
-      @page = Page.find_by_name(params[:id])
-      render_404 unless @page
-    end
-
-    def edit
-      @page = Page.find_by_name(params[:id])
-      render_404 unless @page
+      redirect_to "#{pages_path}/#{name}"
     end
 
     def update
       name    = params[:id]
       content = params[:page][:raw_data]
       Page.update(name, content, @user)
-      redirect_to "#{pages_path}/#{name.parameterize}"
+      redirect_to "#{pages_path}/#{name}"
     end
 
     def destroy
@@ -51,6 +42,11 @@ module Birdses
     end
 
     private
+
+    def set_page
+      @page = Page.find_by_name(params[:id])
+      render_404 unless @page
+    end
 
     def get_user
       name  = 'Anonymous'
