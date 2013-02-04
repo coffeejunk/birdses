@@ -24,7 +24,7 @@ $(document).ready(function() {
             data: {
               format: "json",
             utf8: "✓",
-            authenticity_token: $("#birdses_preview_form input[name=authenticity_token]").val,
+            authenticity_token: $("#birdses_preview_form input[name=authenticity_token]").val(),
             md_content: textarea.val(),
             name: name
             },
